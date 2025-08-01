@@ -15,12 +15,12 @@ namespace BookStore.Controllers
             this.userService = userService;
         }
         [HttpPost("signup")]
-        public UserResponseDto signUp(UserSaveRequestDto userSaveRequestDto)
+        public UserResponseDto signUp([FromBody]UserSaveRequestDto userSaveRequestDto)
         {
             return userService.signUp(userSaveRequestDto);
         }
         [HttpPost("login")]
-        public string login(UserLoginRequestDto dto)
+        public string login([FromBody]UserLoginRequestDto dto)
         {
             return userService.login(dto);
         }

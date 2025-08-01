@@ -18,7 +18,7 @@ namespace BookStore.Controllers
         }
 
         [HttpPost]
-        public OrderResponseDto add(List<string> BookIsbn, string token)
+        public OrderResponseDto add(List<string> BookIsbn, [FromQuery]string token)
         {
             return orderService.add(BookIsbn,token);
         }

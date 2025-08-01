@@ -15,12 +15,12 @@ namespace BookStore.Controllers
             this.bookService = bookService;
         }
         [HttpPost]
-        public BookResponseDto addBook(BookSaveRequestDto dto, string token)
+        public BookResponseDto addBook([FromBody] BookSaveRequestDto dto, [FromQuery]string token)
         {
             return bookService.addBook(dto,token);
         }
         [HttpPut("{isbn}")]
-        public BookResponseDto updateBook(BookUpdateRequestDto dto, [FromRoute] string isbn, string token)
+        public BookResponseDto updateBook([FromBody] BookUpdateRequestDto dto, [FromRoute] string isbn, [FromQuery]string token)
         {
             return bookService.updateBook(dto, isbn,token);
 
